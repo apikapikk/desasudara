@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     git unzip curl libpng-dev libonig-dev libxml2-dev zip libzip-dev \
     libjpeg-dev libfreetype6-dev libssl-dev libcurl4-openssl-dev \
     libicu-dev libmcrypt-dev libpq-dev libxslt-dev default-mysql-client \
-    && docker-php-ext-install pdo pdo_mysql zip gd sodium
+    libsodium-dev && docker-php-ext-install pdo pdo_mysql zip gd sodium
 
 # Install Composer (PHP dependency manager)
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
